@@ -1,0 +1,20 @@
+Checking sampler transitions treedepth.
+Treedepth satisfactory for all transitions.
+
+Checking sampler transitions for divergences.
+39 of 12000 (0.33%) transitions ended with a divergence.
+These divergent transitions indicate that HMC is not fully able to explore the posterior distribution.
+Try increasing adapt delta closer to 1.
+If this doesn't remove all divergences, try to reparameterize the model.
+
+Checking E-BFMI - sampler transitions HMC potential energy.
+E-BFMI satisfactory.
+
+Rank-normalized split effective sample size satisfactory for all parameters.
+
+The following parameters had rank-normalized split R-hat greater than 1.01:
+  sigma_V, y_sol[1,1], y_sol[2,1], y_sol[3,1], y_sol[4,1], y_sol[1,2], y_sol[2,2], y_sol[4,2], y_sol[2,3], y_sol[4,3], y_sol[3,4], y_sol[4,4], y_pred[6], y_pred[7], y_pred[8], y_pred[9], y_pred[10], y_pred[16], y_pred[17], y_pred[18], y_pred[19], y_pred[20], y_pred[31], y_pred[32], y_pred[33], y_pred[34], y_pred[35], y_pred[36], y_pred[37], y_pred[38], y_pred[39], y_pred[40], c_over_delta, log_lik[6], log_lik[7], log_lik[8], log_lik[10], log_lik[11], log_lik[12], log_lik[13], log_lik[14], log_lik[15], log_lik[16], log_lik[17], log_lik[19], log_lik[20], log_lik[28], log_lik[29], log_lik[32], log_lik[33], log_lik[34], log_lik[35], log_lik[36], log_lik[37], log_lik[38], log_lik[39], log_lik[40]
+Such high values indicate incomplete mixing and biased estimation.
+You should consider regularizing your model with additional prior information or a more effective parameterization.
+
+Processing complete.
