@@ -1,0 +1,37 @@
+Within-host model (with-DIP, cumulative-IFN feedback)
+
+States
+  T     target cells
+  I     infected cells
+  V     infectious virus
+  D     DIPs
+  F     IFN
+  cumF  cumulative IFN
+
+Equations
+  dT/dt    = -beta*T*V
+  dI/dt    =  beta*T*V - delta*I
+  dV/dt    = (1-d)*p_eff*I - c*V
+  dD/dt    =     d*p_eff*I - h*D
+  dF/dt    = s(D)*I*g(cumF) - alpha*F
+  dcumF/dt = F
+
+  p_eff   = p_hat/(1 + eps*F)          IFN suppresses production
+  s(D)    = s0 + s_d*D/(1 + theta*D)   DIPs raise IFN induction
+  g(cumF) = 1/(1 + cumF/cumF50)        accumulated IFN shuts induction down
+
+Parameters
+  beta    infection rate
+  delta   infected-cell death rate
+  p_hat   progeny particles per infected cell per day
+  eps     IFN suppression of production
+  c       virus clearance rate
+  d       fraction of progeny that are DIPs
+  h       DIP clearance rate
+  s0      baseline IFN induction
+  s_d     DIP-driven IFN induction
+  theta   DIP half-saturation
+  alpha   IFN decay rate
+  cumF50  cumulative IFN at which induction is halved
+
+The no-DIP model drops D and sets d = 0, so s(D) = s0.
